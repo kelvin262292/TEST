@@ -1,0 +1,139 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <title>Your Shopping Cart - 3D Shop</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> {# Placeholder icon #}
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#0d0f1c]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+              </div>
+              <h2 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]">3D Shop</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="{% url 'home_page' %}">Home</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="{% url 'product_list_page' %}">Shop</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">About</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Contact</a>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end items-center gap-4"> {# Adjusted gap and items-center #}
+            {# Search and other icons from original HTML can be kept if desired, but are not core to cart functionality #}
+            <a href="{% url 'view_cart_page' %}" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                <div class="text-[#0d0f1c]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+                  </svg>
+                </div>
+                <span>Cart ({{ cart|length }})</span>
+            </a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'user_profile_page' %}" class="text-[#0d0f1c] text-sm font-medium leading-normal whitespace-nowrap hover:text-[#607afb]">My Account</a>
+            {% else %}
+            <a href="#" class="text-[#0d0f1c] text-sm font-medium leading-normal whitespace-nowrap hover:text-[#607afb]">Login</a>
+            {% endif %}
+          </div>
+        </header>
+
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72">Your Cart</p>
+            </div>
+
+            {% if cart %}
+              <h2 class="text-[#0d0f1c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Items in Your Cart</h2>
+              <div class="divide-y divide-[#e6e9f4]">
+                {% for item in cart %}
+                  <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 py-4">
+                    <div class="flex-shrink-0">
+                      <a href="{{ item.product.get_absolute_url }}"> {# Assuming you have get_absolute_url on Product model #}
+                        <img
+                          src="{% if item.product.image %}{{ item.product.image.url }}{% else %}https://via.placeholder.com/64x64.png?text=No+Image{% endif %}"
+                          alt="{{ item.product.name }}"
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16"
+                        />
+                      </a>
+                    </div>
+                    <div class="flex-grow flex flex-col md:flex-row md:items-center justify-between">
+                        <div class="flex-grow mb-2 md:mb-0">
+                            <a href="{{ item.product.get_absolute_url }}" class="text-[#0d0f1c] text-base font-medium leading-normal hover:text-[#607afb]">{{ item.product.name }}</a>
+                            <p class="text-[#47569e] text-sm font-normal">Unit Price: ${{ item.price }}</p>
+                        </div>
+                        <div class="flex items-center gap-2 md:gap-4">
+                            <form action="{% url 'update_cart_page' product_id=item.product.id %}" method="post" class="flex items-center">
+                                {% csrf_token %}
+                                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock_quantity }}" class="form-input w-16 text-center rounded-md border-[#e6e9f4] focus:ring-[#607afb] focus:border-[#607afb]">
+                                <button type="submit" class="ml-2 text-xs text-[#607afb] hover:text-[#4a63d8]">Update</button>
+                            </form>
+                            <p class="text-[#0d0f1c] text-sm font-semibold">Item Total: ${{ item.total_price }}</p>
+                            <form action="{% url 'remove_from_cart_page' product_id=item.product.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="text-red-500 hover:text-red-700 text-sm font-medium">Remove</button>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+              <h2 class="text-[#0d0f1c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 mt-6">Order Summary</h2>
+              <div class="p-4">
+                <div class="flex justify-between gap-x-6 py-2">
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">Subtotal</p>
+                  <p class="text-[#0d0f1c] text-sm font-bold leading-normal text-right">${{ cart.get_total_price }}</p>
+                </div>
+                {# Shipping and Taxes can be added later if needed #}
+                <div class="flex justify-between gap-x-6 py-2 border-t border-[#e6e9f4] mt-2">
+                  <p class="text-[#0d0f1c] text-lg font-bold leading-normal">Total</p>
+                  <p class="text-[#0d0f1c] text-lg font-bold leading-normal text-right">${{ cart.get_total_price }}</p>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:flex-row px-4 py-3 justify-end items-center gap-4 mt-4">
+                <a href="{% url 'product_list_page' %}" class="text-[#607afb] hover:underline font-medium">Continue Shopping</a>
+                <a href="{% url 'checkout_page' %}"
+                  class="flex min-w-[84px] max-w-xs w-full md:w-auto cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#607afb] text-[#f8f9fc] text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#4a63d8] transition-colors duration-200"
+                >
+                  <span class="truncate">Proceed to Checkout</span>
+                </a>
+              </div>
+
+            {% else %}
+              <p class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4">Your cart is currently empty.</p>
+              <div class="px-4 py-3">
+                <a href="{% url 'product_list_page' %}" class="text-[#607afb] hover:underline font-medium">Start Shopping</a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <footer class="flex justify-center mt-auto">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">About Us</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Contact</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+              </div>
+              <p class="text-[#47569e] text-base font-normal leading-normal">@2024 3D Shop. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

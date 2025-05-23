@@ -1,0 +1,159 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <title>Checkout - 3D Shop</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> {# Placeholder icon #}
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#0d0f1c]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+              </div>
+              <h2 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]">3D Shop</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="{% url 'home_page' %}">Home</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="{% url 'product_list_page' %}">Shop</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">About</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Contact</a>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end items-center gap-4"> {# Adjusted gap and items-center #}
+            <a href="{% url 'view_cart_page' %}" class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+                <div class="text-[#0d0f1c]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"></path>
+                  </svg>
+                </div>
+                <span>Cart ({{ cart|length }})</span>
+            </a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'user_profile_page' %}" class="text-[#0d0f1c] text-sm font-medium leading-normal whitespace-nowrap hover:text-[#607afb]">My Account</a>
+            {% else %}
+            <a href="#" class="text-[#0d0f1c] text-sm font-medium leading-normal whitespace-nowrap hover:text-[#607afb]">Login</a>
+            {% endif %}
+          </div>
+        </header>
+
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72">Checkout</p>
+            </div>
+
+            {% if messages %}
+              <div class="p-4">
+                {% for message in messages %}
+                  <div class="p-3 rounded-md {% if message.tags == 'success' %}bg-green-100 text-green-700{% elif message.tags == 'error' %}bg-red-100 text-red-700{% else %}bg-blue-100 text-blue-700{% endif %}" role="alert">
+                    {{ message }}
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+              {# Shipping Information Form #}
+              <div class="md:col-span-2">
+                <h2 class="text-[#0d0f1c] text-xl font-semibold leading-tight mb-4">Shipping Information</h2>
+                <form method="post">
+                  {% csrf_token %}
+                  <div class="space-y-4">
+                    {% for field in form %}
+                    <div>
+                      <label for="{{ field.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
+                      {{ field }}
+                      {% if field.help_text %}
+                        <p class="mt-1 text-xs text-gray-500">{{ field.help_text }}</p>
+                      {% endif %}
+                      {% for error in field.errors %}
+                        <p class="mt-1 text-xs text-red-500">{{ error }}</p>
+                      {% endfor %}
+                    </div>
+                    {% endfor %}
+                  </div>
+                  <div class="mt-8">
+                    <button type="submit" class="w-full flex cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#607afb] text-[#f8f9fc] text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#4a63d8] transition-colors duration-200">
+                      Save Shipping Address & Proceed
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              {# Order Summary #}
+              <div class="md:col-span-1">
+                <h2 class="text-[#0d0f1c] text-xl font-semibold leading-tight mb-4">Order Summary</h2>
+                <div class="bg-white p-4 rounded-lg shadow">
+                  {% if cart %}
+                    <div class="divide-y divide-gray-200">
+                    {% for item in cart %}
+                      <div class="flex items-center justify-between py-3">
+                        <div class="flex items-center">
+                          <img src="{% if item.product.image %}{{ item.product.image.url }}{% else %}https://via.placeholder.com/48x48.png?text=N/A{% endif %}" alt="{{ item.product.name }}" class="size-12 rounded-md object-cover mr-3">
+                          <div>
+                            <p class="text-sm font-medium text-gray-900">{{ item.product.name }}</p>
+                            <p class="text-xs text-gray-500">Qty: {{ item.quantity }}</p>
+                          </div>
+                        </div>
+                        <p class="text-sm font-medium text-gray-900">${{ item.total_price }}</p>
+                      </div>
+                    {% endfor %}
+                    </div>
+                    <div class="border-t border-gray-200 pt-4 mt-4">
+                      <div class="flex justify-between text-base font-medium text-gray-900">
+                        <p>Subtotal</p>
+                        <p>${{ cart.get_total_price }}</p>
+                      </div>
+                      <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at next step.</p>
+                    </div>
+                  {% else %}
+                    <p class="text-gray-500">Your cart is empty.</p>
+                  {% endif %}
+                </div>
+
+                <div class="mt-6">
+                  <h3 class="text-[#0d0f1c] text-lg font-semibold leading-tight mb-2">Shipping Method</h3>
+                  <div class="bg-white p-4 rounded-lg shadow">
+                    <p class="text-gray-500 text-sm">To be determined in the next step.</p>
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <h3 class="text-[#0d0f1c] text-lg font-semibold leading-tight mb-2">Payment Method</h3>
+                  <div class="bg-white p-4 rounded-lg shadow">
+                    <p class="text-gray-500 text-sm">To be determined in the next step.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="flex justify-center mt-auto">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">About Us</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Contact</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+              </div>
+              <p class="text-[#47569e] text-base font-normal leading-normal">@2024 3D Shop. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

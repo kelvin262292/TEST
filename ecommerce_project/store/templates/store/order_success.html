@@ -1,0 +1,147 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <title>Order Confirmation - 3D Shop</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," /> {# Placeholder icon #}
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0d0f1c]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+            </div>
+            <h2 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]">3D Shop</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="{% url 'home_page' %}">Home</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="{% url 'product_list_page' %}">Shop</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">About</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Contact</a>
+            </div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'user_profile_page' %}" class="text-[#0d0f1c] text-sm font-medium leading-normal whitespace-nowrap hover:text-[#607afb]">My Account</a>
+            {% else %}
+            <a href="#" class="text-[#0d0f1c] text-sm font-medium leading-normal whitespace-nowrap hover:text-[#607afb]">Login</a>
+            {% endif %}
+            {# User profile icon if needed #}
+          </div>
+        </header>
+
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-full max-w-2xl py-5">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0d0f1c] tracking-light text-3xl font-bold leading-tight">Order Confirmation</p>
+            </div>
+            <p class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Thank you for your purchase! Your order has been successfully placed and is being processed. 
+              {% if order.id %}You will receive a confirmation email shortly with the details of your order and tracking information.{% endif %}
+            </p>
+
+            {% if order %}
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Order Summary</h3>
+            <div class="bg-[#f8f9fc] px-4 py-3 border-b border-[#e6e9f4]">
+              <p class="text-[#0d0f1c] text-base font-medium">Order Date: <span class="font-normal">{{ order.order_date|date:"F d, Y" }}</span></p>
+              <p class="text-[#47569e] text-sm font-normal">Order ID: #{{ order.id }}</p>
+            </div>
+            <div class="bg-[#f8f9fc] px-4 py-3 border-b border-[#e6e9f4]">
+              <p class="text-[#0d0f1c] text-base font-medium">Shipping Method: <span class="font-normal">{{ order.shipping_method|default:"Standard Shipping" }}</span></p>
+              {% if order.shipping_address %}
+              <p class="text-[#47569e] text-sm font-normal">
+                Shipping Address: {{ order.shipping_address.full_name }}, {{ order.shipping_address.street_address }}, {{ order.shipping_address.city }}, {{ order.shipping_address.state_or_province }}, {{ order.shipping_address.postal_code }}, {{ order.shipping_address.country }}
+                {% if order.shipping_address.phone_number %}<br>Phone: {{ order.shipping_address.phone_number }}{% endif %}
+              </p>
+              {% endif %}
+            </div>
+
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Items Purchased</h3>
+            <div class="p-4 space-y-4">
+              {% for item in order.items.all %}
+              <div class="flex items-stretch justify-between gap-4 rounded-xl border border-[#e6e9f4] p-3">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-[#47569e] text-sm font-normal">3D Model</p>
+                  <p class="text-[#0d0f1c] text-base font-bold leading-tight">{{ item.product.name }}</p>
+                  <p class="text-[#47569e] text-sm font-normal">Quantity: {{ item.quantity }}</p>
+                  <p class="text-[#0d0f1c] text-sm font-semibold">Price: ${{ item.price_at_purchase }}</p>
+                </div>
+                <div class="flex-1">
+                    {% if item.product.image %}
+                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="w-full h-24 object-cover rounded-lg">
+                    {% else %}
+                    <div class="w-full h-24 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <span class="text-gray-500 text-xs">No Image</span>
+                    </div>
+                    {% endif %}
+                </div>
+              </div>
+              {% empty %}
+              <p class="text-[#47569e] text-sm px-4">No items found in this order.</p>
+              {% endfor %}
+            </div>
+
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Payment Information</h3>
+            <div class="bg-[#f8f9fc] px-4 py-3 border-b border-[#e6e9f4]">
+              <p class="text-[#0d0f1c] text-base font-medium">Payment Method: <span class="font-normal">{{ order.payment_method|default:"Credit Card (Placeholder)" }}</span></p>
+              {% if order.billing_address %} {# Assuming billing_address might be different or contain payment specific info #}
+              <p class="text-[#47569e] text-sm font-normal">Billing Address: {{ order.billing_address.street_address }}, {{ order.billing_address.city }}</p>
+              {% else %}
+              <p class="text-[#47569e] text-sm font-normal">Card ending in: **** (Placeholder)</p>
+              {% endif %}
+            </div>
+
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Order Total</h3>
+            <div class="bg-[#f8f9fc] px-4 py-3 border-b border-[#e6e9f4]">
+              <p class="text-[#0d0f1c] text-base font-medium">Subtotal: <span class="font-normal">${{ order.subtotal_amount|default:order.total_amount }}</span></p> {# Assuming subtotal if available #}
+              <p class="text-[#47569e] text-sm font-normal">Shipping: {{ order.shipping_cost|default:"$0.00" }}</p>
+              <p class="text-[#47569e] text-sm font-normal">Tax: {{ order.tax_amount|default:"$0.00" }}</p>
+            </div>
+            <div class="bg-[#f8f9fc] px-4 py-3">
+              <p class="text-[#0d0f1c] text-xl font-bold">Total: <span class="font-bold">${{ order.total_amount }}</span></p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-3 px-4 py-5">
+              <a href="{% url 'home_page' %}" class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6e9f4] text-[#0d0f1c] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 transition-colors">
+                <span class="truncate">Continue Shopping</span>
+              </a>
+              {# Placeholder for a "View Order Details" link if you have a user order history page #}
+              {# <a href="#" class="flex flex-1 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#607afb] text-[#f8f9fc] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#4a63d8] transition-colors"> #}
+              {# <span class="truncate">View Order Details</span> #}
+              {# </a> #}
+            </div>
+            {% else %}
+             <p class="text-[#47569e] text-base font-normal leading-normal px-4 py-5">Could not retrieve order details. Please check your email or contact support.</p>
+             <div class="px-4 py-3">
+                <a href="{% url 'home_page' %}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#e6e9f4] text-[#0d0f1c] text-sm font-bold leading-normal tracking-[0.015em]">
+                    <span class="truncate">Back to Home</span>
+                </a>
+             </div>
+            {% endif %}
+          </div>
+        </div>
+        <footer class="flex justify-center mt-auto">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">About Us</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Contact</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+              </div>
+              <p class="text-[#47569e] text-base font-normal leading-normal">@2024 3D Shop. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
