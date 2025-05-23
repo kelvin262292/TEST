@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#0d0f1c]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+            </div>
+            <h2 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]">3D Shop</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Shop</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">About</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Contact</a>
+            </div>
+            <div class="flex gap-2">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0d0f1c]" data-icon="Heart" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0d0f1c]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2fPtnn19j_GvvtuHvEJ0iR_6p9nWI7I7MD3ynakrb_GfxQ0mCZFkrIsnPVLxj_iKvvUixYHtwpVWfFlKt9y3n0RUTb6YKYe9B6Jakk3yyndwFADagJwhjqXrHvlkD2_tBFqQnh1w5cU9ncUFN-RLqnBr4cLqCejPvdVWiHTRL73ZsAnO5t1HYiP6bHkhtCAZi-jlPpDx0Ar2QBEs95s4JnRHAUy9l7dN-k8Tz5VlB9I4e5gkhNmrYuEi55cHfPITjU6z1FGbX9_Yh");'
+            ></div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72">Order Confirmation</p></div>
+            <p class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              Thank you for your purchase! Your order has been successfully placed and is being processed. You will receive a confirmation email shortly with the details of your
+              order and tracking information.
+            </p>
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Order Summary</h3>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Order Date: July 26, 2024</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Order ID: #123456789</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Shipping Method: Standard Shipping</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Shipping Address: 123 Main Street, Anytown, CA 91234</p>
+              </div>
+            </div>
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Items Purchased</h3>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">3D Model</p>
+                  <p class="text-[#0d0f1c] text-base font-bold leading-tight">Modern Sofa</p>
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">Quantity: 1</p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPKKkNP6zbXyuroka4jVITOA4HAictkxlSqPUYx9yJm5wQ_Otz0xEdh1l4Af8obN_IdWVUIJqA-4xGnZ64HcgmHyqh09xT7N5DVXzNvAS_m4FB6jKa26241gV90HqrGs6lAP1WZHzucJe1LPHqufUb_4x7-Gd9Nk0S5CgtmyeA_dmf1BNgw3D4uBY3k1JhRDmc9zGdOwL_I_-ONcrV8lHh_sOackKmysOT_I02Q9le7C4Hn0U6f5J43ZX9OJ0NVj9bZfp2_Dbcga3f");'
+                ></div>
+              </div>
+            </div>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">3D Model</p>
+                  <p class="text-[#0d0f1c] text-base font-bold leading-tight">Minimalist Chair</p>
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">Quantity: 2</p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCq2zHBvm_j3azfqAwIcfg-sHnFZTQwyjpubYpsLaQhajYx2z1Wy_lxi5iwhVmQki6uDwVjl0qya4fG4svGcL_vAncxEHVuaR_YvmGCyMNgO2FTjhHbnNWgccCRPPiICiabGwBDCDjkKDyklQ_6RQZtwsEz335Fx8GPG8A6pojNfP6PYsUwg7NNVqLecXrccQB56x4EYmaru4sTqgXRSRMMV6aYNrWB3v5WzLNW0dAxk303_56iZ7trW3j3dlvs-2K1buOd-v54Raza");'
+                ></div>
+              </div>
+            </div>
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Payment Information</h3>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Card ending in: 1234</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Payment Method: Credit Card</p>
+              </div>
+            </div>
+            <h3 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Order Total</h3>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Subtotal: $250</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Shipping: Free</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Total: $275</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Tax: $25</p>
+              </div>
+            </div>
+            <div class="flex px-4 py-3">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#607afb] text-[#f8f9fc] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">View Order Details</span>
+              </button>
+            </div>
+            <div class="flex px-4 py-3">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#e6e9f4] text-[#0d0f1c] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Continue Shopping</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

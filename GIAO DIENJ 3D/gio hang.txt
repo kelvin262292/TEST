@@ -1,0 +1,164 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#0d0f1c]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+              </div>
+              <h2 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]">3D Shop</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Shop</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">About</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Contact</a>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+              <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                <div
+                  class="text-[#47569e] flex border-none bg-[#e6e9f4] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                  data-icon="MagnifyingGlass"
+                  data-size="24px"
+                  data-weight="regular"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  placeholder="Search"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d0f1c] focus:outline-0 focus:ring-0 border-none bg-[#e6e9f4] focus:border-none h-full placeholder:text-[#47569e] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                  value=""
+                />
+              </div>
+            </label>
+            <div class="flex gap-2">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0d0f1c]" data-icon="Heart" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-[#0d0f1c]" data-icon="ShoppingBag" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72">Your Cart</p></div>
+            <p class="text-[#0d0f1c] text-base font-normal leading-normal pb-3 pt-1 px-4">Review your selected items in 3D before proceeding to checkout.</p>
+            <div class="p-4">
+              <div
+                class="relative flex items-center justify-center bg-[#607afb] bg-cover bg-center aspect-video rounded-xl p-4"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrpZkiaitEqdv0mWs4emwMg1cO8pMyy052imJvCzjFodJdNj06v8Uh9LXzHc6m1NvOhKvfunFGcw8GgVY4RBgvEPOJYr7h35GkwnnVjnsv5MY3ouXIpt5dOn7QRDYa1d_gERnoiwiCsxI8KJtv-o9LawrbURyG1F6TPxj2jMS18lKY9I_XFgI1M07KWDu6IxmOtLoezc8EO8fOpV8eFFBWje316lqdvs2NxbrqG5xMroVmegOHPmghkgkwEzM73ahSKEWojQ7roCRd");'
+              >
+                <button class="flex shrink-0 items-center justify-center rounded-full size-16 bg-black/40 text-white">
+                  <div class="text-inherit" data-icon="Play" data-size="24px" data-weight="fill">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+            <h2 class="text-[#0d0f1c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Items in Your Cart</h2>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBV-HchvN2qAJqJ3mLnFfrtVrZH9QAWFQ6tdYYL5eA91u5P0ShWfIE3zgbu_yXJ9_DSj-UBhvt5_PVQIHQYxVRgAKi3SpKMT1m1Lst44Uf5qJgp9UqvAoUqsXf37rrldK7xFDW-_5gTpWGtYL1MDhvm9ZeyJn0Eum6mjZ0t3Ha_I43Cn7qpmmjcXZ_6DzcWbK935CqBpIoKaJJTaUtxYzBMTlGqSVS2hxPBVx7XuLjPI--lOj6GMdK1c2gxBCdtEmPw9RZBCmQyspFd");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Modern Chair</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Quantity: 1</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGgTvjOihQziBj-_S97kW8cvVRhGtmxBh9YpFw_zchwfygYl5YHey5tPfmgYwk5hCOpIgHd_lm_WigQlQ1IUYaKpzhiot1mrF8dGvo_TnaJzGC1YBfu8lzYUihBvh1rfaGbL5x3H6QFHTsN0TWabb9d_fXb4ADEvZzmyrfOTkwMymf-yTjUdCjUtzG2LksTIc3tEi-wNCCPyzgwDGjkf-1FCr1Ny9YdD3UblwX6lX571RpWh-Mfdr2lR_-Zkt2_1kKQvJYuLV8-2PP");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Minimalist Table</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Quantity: 2</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 bg-[#f8f9fc] px-4 min-h-[72px] py-2">
+              <div
+                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC4SKy1_6GrCo-qaxQsBnt5_CV8FwtMiSQof0QlOlyVxBum37JFlbACxS9hlq_0ce4gIfF4gzvYGL_ORBJs-qJnqedjvnqaE6JzEdDQvZa9hLD80jST_L9G5lBvEJtnpMXzGMDZlEDSOmmtAnHGeQZzvA_Wdqj0iRyBrkxmTbGRbVKmTfhjuBbPIOOzHRoEIWIu1VLH-642s6Ra57U1P3e0LcE9ILpPBV4EEW5N-CIaui2DGTAsrQ2tTnpE1rnW9akQW8RpW9aKIBmn");'
+              ></div>
+              <div class="flex flex-col justify-center">
+                <p class="text-[#0d0f1c] text-base font-medium leading-normal line-clamp-1">Designer Lamp</p>
+                <p class="text-[#47569e] text-sm font-normal leading-normal line-clamp-2">Quantity: 1</p>
+              </div>
+            </div>
+            <h2 class="text-[#0d0f1c] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Order Summary</h2>
+            <div class="p-4">
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#47569e] text-sm font-normal leading-normal">Subtotal</p>
+                <p class="text-[#0d0f1c] text-sm font-normal leading-normal text-right">$550.00</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#47569e] text-sm font-normal leading-normal">Shipping</p>
+                <p class="text-[#0d0f1c] text-sm font-normal leading-normal text-right">$25.00</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#47569e] text-sm font-normal leading-normal">Taxes</p>
+                <p class="text-[#0d0f1c] text-sm font-normal leading-normal text-right">$45.00</p>
+              </div>
+              <div class="flex justify-between gap-x-6 py-2">
+                <p class="text-[#47569e] text-sm font-normal leading-normal">Total</p>
+                <p class="text-[#0d0f1c] text-sm font-normal leading-normal text-right">$620.00</p>
+              </div>
+            </div>
+            <div class="flex px-4 py-3 justify-end">
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-[#607afb] text-[#f8f9fc] text-base font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Proceed to Checkout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

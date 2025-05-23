@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col bg-[#f8f9fc] group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#e6e9f4] px-10 py-3">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-4 text-[#0d0f1c]">
+              <div class="size-4">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+              </div>
+              <h2 class="text-[#0d0f1c] text-lg font-bold leading-tight tracking-[-0.015em]">3D Shop</h2>
+            </div>
+            <div class="flex items-center gap-9">
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Home</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Products</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">About</a>
+              <a class="text-[#0d0f1c] text-sm font-medium leading-normal" href="#">Contact</a>
+            </div>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+            <label class="flex flex-col min-w-40 !h-10 max-w-64">
+              <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                <div
+                  class="text-[#47569e] flex border-none bg-[#e6e9f4] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                  data-icon="MagnifyingGlass"
+                  data-size="24px"
+                  data-weight="regular"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  placeholder="Search"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d0f1c] focus:outline-0 focus:ring-0 border-none bg-[#e6e9f4] focus:border-none h-full placeholder:text-[#47569e] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                  value=""
+                />
+              </div>
+            </label>
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#e6e9f4] text-[#0d0f1c] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+            >
+              <div class="text-[#0d0f1c]" data-icon="ShoppingCart" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#0d0f1c] tracking-light text-[32px] font-bold leading-tight min-w-72">Explore Our 3D Products</p>
+            </div>
+            <div class="px-4 py-3">
+              <label class="flex flex-col min-w-40 h-12 w-full">
+                <div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+                  <div
+                    class="text-[#47569e] flex border-none bg-[#e6e9f4] items-center justify-center pl-4 rounded-l-xl border-r-0"
+                    data-icon="MagnifyingGlass"
+                    data-size="24px"
+                    data-weight="regular"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    placeholder="Search for products"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#0d0f1c] focus:outline-0 focus:ring-0 border-none bg-[#e6e9f4] focus:border-none h-full placeholder:text-[#47569e] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                    value=""
+                  />
+                </div>
+              </label>
+            </div>
+            <div class="flex gap-3 p-3 flex-wrap pr-4">
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#e6e9f4] pl-4 pr-4">
+                <p class="text-[#0d0f1c] text-sm font-medium leading-normal">All</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#e6e9f4] pl-4 pr-4">
+                <p class="text-[#0d0f1c] text-sm font-medium leading-normal">Electronics</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#e6e9f4] pl-4 pr-4">
+                <p class="text-[#0d0f1c] text-sm font-medium leading-normal">Home Decor</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-[#e6e9f4] pl-4 pr-4">
+                <p class="text-[#0d0f1c] text-sm font-medium leading-normal">Fashion</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDfPxuPc8Yryg6HsMroxMKKk-ZfD-y6L6mvfGC89Uh3xBd4X57ujNZsdvlL6SPOj5xfjmz4gGYx741LkIkjGANlj6HFkMZgwXabSwMriD7ygHpLLda2BXmGS4LdVxII2aJBDML-DPfVGFutvEUVWWvGaiUxCjXNiZ-Cb7beUnc7hdqU1foababIQ4y7O3g-7YcFdMLNlzQ9_F76wGuwbhcPp18lC2VEEy8r-hT6twa0bvwkZB-fR2WKlQRQXqihmBZybQENuP2WAEaj");'
+                ></div>
+                <div>
+                  <p class="text-[#0d0f1c] text-base font-medium leading-normal">Wireless Headphones</p>
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">Immersive sound experience</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDWELxc0T6HJAFOnqsEl2Sa8oVNC4l5N9RaM8M61eYVL2KGiHzO8XKqapWaY5Ooal-BHXB0KJgvEfyOiUD68UC7I5iX_Uw2hM3ddAm0UGEIfytWprhr2QQ_qAyAShmBqsLYhs1YDwyhAKJb9kAH4AFTqPyo9zdvsUe0c-R2JTK8K8Pzao3Dl5El876SOldj0me1SCwEakCWCxZ98IM-_fgGz1gr1azVrLimik1yQQdEx-veR9-a0vi9kYMIlf70XFOFsX1PGFYMuli");'
+                ></div>
+                <div>
+                  <p class="text-[#0d0f1c] text-base font-medium leading-normal">Modern Vase</p>
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">Elegant design for your home</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwTb8hGhy2SzTpcUYDaXetwXB2y9T-JnPvLNKt-9Z5RRBHc8DIMhEJZ9qDUzk3RWTM0Xtgq36iO8Ge-2kPyqL7stjM0knHm_oDNVaFcuPfDmG_fIFMcWPu8sI5fK24SE23dkCrjPXj2tKMYiDwbSTBmrSzLexCGV2V2V3d83RLsTz8AiSzmEn8PTSyD2d3NXKMkB5hfCdGjwjTX509T1DAOPlQXdN-p5D2SQJCNkVB7kIt5cfXqgt4c88sxihUR6LFagc_XIuO5lyF");'
+                ></div>
+                <div>
+                  <p class="text-[#0d0f1c] text-base font-medium leading-normal">Stylish Backpack</p>
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">Carry your essentials in style</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAUu1jnLeT40Zdd0P7GGmMbNujpqIbCOkaebg-IbjemVYfkCTGhLXlGwiCVKIfe_kFUlvS1vEA0XmwDCiCjODYFRWitHNN0fYXDFO6IlD4XssvmngXhARW5f3xhawdwGWav8jLRXQWdy06H_8d072jR1wr0C-EophAdXiC9Tp-ZGlIM79PnEPvY7eXtTTK2e7NG047QsATa0YBXz_upIDC8MiZEfv6vXktw5-LjTUivpE7ttYsPPajBKs2oRD0qvEatFFpeVhdCNlVD");'
+                ></div>
+                <div>
+                  <p class="text-[#0d0f1c] text-base font-medium leading-normal">Smartwatch</p>
+                  <p class="text-[#47569e] text-sm font-normal leading-normal">Track your fitness and stay connected</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBftVYDkcpbDXLOT6eemYkuRbwYavqKeqE6xjEZajEiUxQo6CKqy03DMnuAaR4LO7ClrIF3gOtVmEGYuNyjlQzJiNYXiFj4mpK3ZO-vhIBdHe0-P_lcK4KStWtFkEwCH5HFr_0PHUBRBmEYCt6HjV8_VRRs6Ds3fq0QeT924V7kj82GeTHFHcGI9ndw1FR-wdfI42MV3AdiYdFJBlf261olV1GAiDlg0o5F2rhrrovIFbL68OtwhqSLLC0ut2_UzBgS5HaBJCFxmfCE");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1uGAv_MiuwGVhjokyukoKNcCoFa2oJM26gbxq2sFtfnh6jPOrnktoQwOqzegToG1WENxLhjZysLif8SjocUC8l89zraUKT1GSUe4W_-bkGn6MVD8KmnM7QzH_hDggNIb2kxuWQ9WyhPS86KtgIKnJHVSJ9_MuD2cvQ_VlDXCWYg2avvwSBpFSZEf1GErU7sGKsYqzOf77WdpVVtijtnGZns5MRRMeePpJNAaIJ7kYvfNi65CGOiBTOYM789gbxzYbUHk2klL2atF3");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-bY__gY9BVT7dRja5I5ycrpV33Y6i9z1wLcM-uR6khkaYEy9gy9TL-RZiROjV9xavUCEsAtQD8DRyioNkYHtvEYO54xpPne5kVKOCepk-LFmVbr7CYhkrb7lFVW5WK6lRd_LUdFmg52i0mqHj9Dj8FFbnnCBJ6y93XlqjrjHG_G9LDIJlcNv6zmAijbJ1ZDQsO-9XKn3kkQjiuBVfP7eauXO90bc14gqk85IOMcskuLOlpApgCh2B8CP50Q-H04ANg8EQNG7kVtg1");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA94yVrYU-jhdQ6C-0N4cHArRH3vVbQ3mHG-nfcCDTNU7SpGapl3x6-qPnVrnmlQzcWNT0JZjUcEn784F2-i6f_1bQfA7xPnh_81fqW_PYYqS94Bltr2ZPm6O1K9bTJ9qfJLagK2KNmaAwhBO__darMwhTtRtAel4H7kvUnXJTiKDpz1S3-AIs4junVTYNdMhYNgL6e8aghwl-VdBf8FkV6oCsxwtuCLpF_AANi1A-P4n2fblVrtjIOzZD9E4kTWnCpVdmAxEnTlT6t");'
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="flex justify-center">
+          <div class="flex max-w-[960px] flex-1 flex-col">
+            <footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
+              <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">About Us</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Contact</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Privacy Policy</a>
+                <a class="text-[#47569e] text-base font-normal leading-normal min-w-40" href="#">Terms of Service</a>
+              </div>
+              <p class="text-[#47569e] text-base font-normal leading-normal">@2024 3D Shop. All rights reserved.</p>
+            </footer>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
